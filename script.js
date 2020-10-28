@@ -1,43 +1,36 @@
 $("#currentDay").text(moment().format('dddd | LL'));
-var now = moment().format('LT')
+var now = moment().format('H')
 console.log(now)
-// var hour = [9, 10, 11, 12, 13,14,15,16,17,18]
 
 
 
-$('.row').each(function() {
+
+$('.description').each(function() {
     if (parseInt($(this).data('hour')) < now) {
-        $(".description").addClass("past")
+        $(this).addClass("past")
     } else if (parseInt($(this).data('hour')) > now) {
-        $(".description").addClass("future")
+        $(this).addClass("future")
     } else {
-        $(".description").addClass("present")
+        $(this).addClass("present")
     }
-
+console.log($(this).data('hour'))
 })
-/*
-if ($(".hour").html > moment().format('LT')) {
-    $(".description").addClass('future')
-    
-}
-if ($(".hour").innerHTML = moment().startOf('hour')) {
-    $(".description").addClass('present')
-    
-}
-if ($(".hour").innerHTML < now) {
-    $(".description").addClass("past")
-    
-} */
-// $('textarea').localStorage.setItem('textNode', textNode.value)
 
-var text = document.querySelectorAll('textarea')
+
+
+
+// THIS ONLY WORKS FOR THE FIRST BLOCK, USING QSALL BREAKS IT COMPLETELY
+var text = document.querySelector('textarea')
 
 $('.saveBtn').on('click', function() {
-    localStorage.setItem("textNode", text.value)
+    
+    localStorage.setItem("text", text.value)
     
 })
 
-var savedText = localStorage.getItem("textNode")
-console.log(localStorage.getItem("textNode"))
+var savedText = localStorage.getItem("text")
+console.log(localStorage.getItem("text"))
 text.innerHTML = savedText
+
+
 
