@@ -4,7 +4,7 @@ console.log(now)
 
 
 
-
+// ADDS COLOR TO TEXTAREA BASED ON CURRENT TIME
 $('.description').each(function() {
     if (parseInt($(this).data('hour')) < now) {
         $(this).addClass("past")
@@ -117,51 +117,5 @@ $('.saveBtn').on('click', function(e) {
     localStorage.setItem("Eightteen", textEightteen.value)
     
 })
-
-
-
-
-
-
-
-// THIS ONLY WORKS FOR THE FIRST BLOCK, USING QSALL BREAKS IT COMPLETELY
-// var text = document.querySelectorAll('textarea')
-// // $('textarea').each(function(){
-// //     text = $(this).data('hour')
-// // })
-
-// // $('textarea').text(savedText)
-
-// var savedText = localStorage.getItem("text")
-// text.innerHTML = savedText
-
-// $('.saveBtn').on('click', function(e) {
-//     e.preventDefault()
-//     localStorage.setItem("eight", textEight.value)
-    
-// })
-
-// console.log(localStorage.getItem("text"))
-
-
-
-// FROM OFFICE HOURS
-/*
-var inputValues = JSON.parse(localStorage.getItem('inputs'))
-
-$('form').each(function(el){
-    console.log(this)
-    $(this).find('input[type="text"]').val(inputValues[this.id])
-})
-
-$('.saveBtn').on('click', function(e){
-    e.preventDefault()
-    var item = this.id
-    var val = $(this).find('input').val()
-    inputValues[item] = val
-    localStorage.setItem('inputs', JSON.stringify(inputValues))
-})
-*/
-
 
 
